@@ -20,7 +20,7 @@
     <repository>
         <id>github</id>
         <name>Jckimble's MVN Repository</name>
-        <url>https://raw.github.com/jckimble/jckimble.github.com/mvn</url>
+        <url>https://raw.github.com/jckimble/jckimble.github.com/mvn-repo</url>
     </repository>
 </distributionManagement>
 
@@ -46,8 +46,9 @@
       <plugin>
         <groupId>com.github.github</groupId>
         <artifactId>site-maven-plugin</artifactId>
-        <version>0.7</version>
+        <version>0.8</version>
         <configuration>
+          <merge>true</merge>
           <message>Maven artifacts for ${project.build.finalName}/${project.version}</message>  <!-- git commit message -->
           <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
           <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
