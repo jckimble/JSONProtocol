@@ -1,4 +1,4 @@
-package com.jckimble.jsonprotocal;
+package com.jckimble.jsonprotocol;
 
 import com.jckimble.jsonprotocol.JSONCallback;
 import com.jckimble.jsonprotocol.JSONServer;
