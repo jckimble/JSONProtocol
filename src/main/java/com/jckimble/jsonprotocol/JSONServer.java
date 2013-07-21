@@ -34,7 +34,7 @@ public class JSONServer extends Thread implements Closeable {
                 JSONClient client=new JSONClient(ss.accept());
                 client.setCallBack(callback);
                 if(THREADS==0)
-                    new Thread(client).start();
+                    client.start();
                 else if(THREADS==1)
                     client.run();
                 else{

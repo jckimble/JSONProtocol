@@ -16,7 +16,7 @@ import org.json.JSONObject;
  *
  * @author jckimble
  */
-public class JSONClient implements Runnable, Closeable {
+public class JSONClient extends Thread implements Closeable {
     protected JSONCallback callback;
     protected DataOutputStream out=null;
     public long closedAt=0;
@@ -54,6 +54,7 @@ public class JSONClient implements Runnable, Closeable {
     @Override
     public void run(){
         try {
+            sock.setKeepAlive(true);
             br=new BufferedReader(new InputStreamReader(sock.getInputStream()));
             out=new DataOutputStream(sock.getOutputStream());
             String line;
